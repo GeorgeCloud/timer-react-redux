@@ -1,13 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
-import timerReducer from '../features/timers/timersSlice';
+import timersReducer from '../features/timers/timersSlice';
 import { update } from '../features/timers/timersSlice';
+import { loadState, saveState } from '../utils/storage'
 
 let lastUpdateTime = Date.now()
 
 export const store = configureStore({
-    reducer: {
-            timers: timerReducer,
-    }
+	reducer: {
+		timers: timersReducer
+	},
+	preloadedState: loadState()
+})
+
+store.subscribe(() => {
+	saveState(store.getState())
 })
 
 setInterval(() => {

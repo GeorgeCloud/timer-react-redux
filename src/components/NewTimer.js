@@ -7,7 +7,7 @@ function NewTimer(){
     const [name, setName] = useState('')
 
     return (
-        <div>
+        <div className='newTimerForm'>
             <input
                 placeholder="Timer Name"
                 onChange={(e) => setName(e.target.value)}

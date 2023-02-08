@@ -1,6 +1,39 @@
 .App {
-  width: 800px;
+  width: 100vw;
   margin: auto;
   margin-top: 50px;
   text-align: center;
+  font-family:'Times New Roman', Times, serif
 }
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: normal;
+}
+
+h2 {
+  margin: 0px;
+}
+
+.description {
+  color: rgb(96,96,96);
+}
+
+input {
+  padding: .46rem;
+  border-radius: 10px 0 0 10px;
+  border: solid 1px;
+}
+
+.newTimerForm > button {
+  margin: 0;
+  padding-left: 0px;
+  border: 1px;
+  height: 2.01rem;
+  width: 3rem;
+  color: white;
+  background-color: black;
+  border-radius: 0 1rem 1rem 0;
+  
+}
+
