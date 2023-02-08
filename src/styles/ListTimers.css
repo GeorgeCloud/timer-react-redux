@@ -1,0 +1,13 @@
+.timers {
+    display: flex;
+    align-items: baseline;
+    align-content: center;
+}
+
+.timers p {
+    font-size: 20px;
+}
+
+.timers button {
+    height: 20px;
+}
