@@ -1,19 +1,21 @@
-import { useDispatch } from 'react-redux'
-import { addNewTimer } from '../actions'
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { addTimer } from '../features/timers/timersSlice'
 
 function NewTimer(){
     const dispatcher = useDispatch();
+    const [name, setName] = useState('')
 
     return (
         <div>
-            <input id="newTimer" placeholder="Timer Name"></input>
-            <button onClick={() => {
-                // Add new timer and clear input field name
-                const timerInputField = document.getElementById('newTimer');
-            
-                dispatcher(addNewTimer(timerInputField.value))
-                timerInputField.value = '';
-            }}>Save</button>
+            <input
+                placeholder="Timer Name"
+                onChange={(e) => setName(e.target.value)}
+            />
+
+            <button onClick={() => dispatcher(addTimer(name))}>
+                Save
+            </button>
         </div>
     )
 }
